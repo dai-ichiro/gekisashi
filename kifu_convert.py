@@ -36,13 +36,13 @@ for each_file in not_yet_files:
 
     kifu = kifu.replace('\u3000', '')
 
-    m = re.search('^先手：.*$', kifu, flags = re.MULTILINE)
+    m = re.search(r'^先手：.*$', kifu, flags = re.MULTILINE)
     sente = m.group()
 
-    m = re.search('^後手：.*$', kifu, flags = re.MULTILINE)
+    m = re.search(r'^後手：.*$', kifu, flags = re.MULTILINE)
     gote = m.group()
 
-    m = re.finditer('^\s*[0-9]+\s+(\S+).*$', kifu, flags=re.MULTILINE)
+    m = re.finditer(r'^\s*[0-9]+\s+(\S+).*$', kifu, flags=re.MULTILINE)
 
     sashite = [x.groups()[0] for x in m]
 
@@ -71,7 +71,7 @@ for each_file in not_yet_files:
 
         if each_sashite[-1] != '打': #駒を動かすときの処理
             
-            move = re.match('^(\d+)(\D+)\((\d+).*$', each_sashite).groups()
+            move = re.match(r'^(\d+)(\D+)\((\d+).*$', each_sashite).groups()
 
             after_x = 9 - int(move[0][0])
             after_y = int(move[0][1]) - 1 
