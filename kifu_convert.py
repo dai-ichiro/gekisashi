@@ -18,12 +18,12 @@ def make_sfen(retu):
 #################################################################
 
 files = glob.glob('kif/*.kif')
-exit_kif_files = [os.path.splitext(os.path.basename(x))[0] for x in files]
+exist_kif_files = [os.path.splitext(os.path.basename(x))[0] for x in files]
 
 files = glob.glob('sfen/*.sfen')
-exit_sfen_files = [os.path.splitext(os.path.basename(x))[0] for x in files]
+exist_sfen_files = [os.path.splitext(os.path.basename(x))[0] for x in files]
 
-not_yet_files = list(set(exit_kif_files) - set(exit_sfen_files))
+not_yet_files = list(set(exist_kif_files) - set(exist_sfen_files))
 
 for each_file in not_yet_files:
 
