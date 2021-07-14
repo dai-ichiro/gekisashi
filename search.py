@@ -11,6 +11,7 @@ while True:
     if input_text == 'q':
         break
     else:
+        input_text = input_text.replace('sfen ', '')
         print('\n')
     
     text_list = input_text.split(' ')
