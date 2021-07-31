@@ -66,7 +66,7 @@ for each_file in not_yet_files:
     #駒を動かす
     for i, each_sashite in enumerate(sashite):
 
-        if each_sashite == '投了':
+        if each_sashite == '投了' or each_sashite == '千日手':
             break
 
         if each_sashite[-1] != '打': #駒を動かすときの処理
